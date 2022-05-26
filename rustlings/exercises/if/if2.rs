@@ -1,0 +1,42 @@
+// if2.rs
+
+// Step 1: Make me compile!
+// Step 2: Get the bar_for_fuzz and default_to_baz tests passing!
+// Execute the command `rustlings hint if2` if you want a hint :)
+
+// I AM DONE
+
+pub fn fizz_if_foo(fizzish: &str) -> &str {
+    if fizzish == "fizz" {
+        "foo"
+    } else {
+        "1"
+    }
+}
+
+// No test changes needed!
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn foo_for_fizz() {
+        if fizz_if_foo("literally anything") == "foo" {
+            assert_eq!(fizz_if_foo("fizz"), "foo")
+        }
+    }
+
+    #[test]
+    fn bar_for_fuzz() {
+        if fizz_if_foo("literally anything") == "bar" {
+            assert_eq!(fizz_if_foo("fuzz"), "bar")
+        }
+    }
+
+    #[test]
+    fn default_to_baz() {
+        if fizz_if_foo("literally anything") == "baz" {
+            assert_eq!(fizz_if_foo("literally anything"), "baz")
+        }
+    }
+}
